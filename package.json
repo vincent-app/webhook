@@ -5,6 +5,7 @@
   "scripts": {
     "postinstall": "prisma generate  --schema=./src/prisma/schema.prisma",
     "build": "pnpm  postinstall && rimraf dist && tsc --noEmit",
+    "vercel-build": "echo 'vercel-build'",
     "start": "nodemon src/index.ts",
     "lint": "npx eslint . --ext .ts",
     "db:migrate": "prisma migrate dev",
