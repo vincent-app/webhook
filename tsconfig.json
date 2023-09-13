@@ -11,5 +11,5 @@
     "resolveJsonModule": true
   },
   "include": ["tests/**/*.ts"],
-  "files": ["index.ts"]
+  "files": ["src/index.ts"]
 }

@@ -29,5 +29,3 @@ prisma
     console.error(e);
     process.exit(1);
   });
-
-module.exports = app;
