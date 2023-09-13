@@ -10,7 +10,7 @@ const router = express.Router();
 router.get("/", async (req: Request, res: Response) => {
   res.json({
     message: "✅ Webhook Service is running",
-  });
+  } as any);
 });
 
 export default router;
