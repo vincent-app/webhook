@@ -9,7 +9,7 @@ const router = express.Router();
  */
 router.post("/clerk", async (req: Request, res: Response) => {
   try {
-    console.log(req.body as Request["body"]);
+    console.log(req.body);
   } catch (err) {
     console.log(err);
     res.status(500).json({
