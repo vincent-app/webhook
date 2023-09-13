@@ -1,4 +1,4 @@
-import express, { type Request, type Response } from "express";
+import express from "express";
 import { prisma } from "../database";
 
 const router = express.Router();
@@ -7,7 +7,7 @@ const router = express.Router();
  * @method POST
  * @description Clerk webhook
  */
-router.post("/clerk", async (req: Request, res: Response) => {
+router.post("/clerk", async (req, res) => {
   try {
     console.log(req.body);
   } catch (err) {

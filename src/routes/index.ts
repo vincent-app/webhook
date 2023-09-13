@@ -1,4 +1,4 @@
-import express, { type Request, type Response } from "express";
+import express from "express";
 
 const router = express.Router();
 
@@ -7,7 +7,7 @@ const router = express.Router();
  * @method GET
  * @description Simple route to test the API
  */
-router.get("/", async (req: Request, res: Response) => {
+router.get("/", async (req, res) => {
   res.json({
     message: "✅ Webhook Service is running",
   });
