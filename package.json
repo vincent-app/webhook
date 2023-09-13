@@ -2,12 +2,9 @@
   "name": "vincent-webhook",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "scripts": {
-    "postinstall": "prisma generate",
-    "build": "prisma generate && rimraf dist && tsc --noEmit",
+    "postinstall": "prisma generate  --schema=./src/prisma/schema.prisma",
+    "build": "pnpm  postinstall && rimraf dist && tsc --noEmit",
     "start": "nodemon src/index.ts",
     "lint": "npx eslint . --ext .ts",
     "db:migrate": "prisma migrate dev",

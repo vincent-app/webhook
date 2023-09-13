@@ -8,7 +8,7 @@ const router = express.Router();
  * @description Simple route to test the API
  */
 router.get("/", async (req: Request, res: Response) => {
-  res.status(200).json({
+  res.json({
     message: "✅ Webhook Service is running",
   });
 });
