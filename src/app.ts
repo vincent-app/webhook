@@ -7,8 +7,8 @@ import { config } from "dotenv";
 /**
  * Import routes
  */
-import index from "../api/routes/index";
-import webhook from "../api/routes/webhook";
+import index from "./routes/index";
+import webhook from "./routes/webhook";
 
 const app = express();
 
