@@ -70,6 +70,35 @@ router.post("/clerk", async (req, res) => {
         message: "User created",
       });
     }
+
+    if (eventType === "user.deleted") {
+      if (!id)
+        return res.status(400).json({
+          message: "Missing user ID",
+        });
+
+      const user = await prisma.user.findUnique({
+        where: {
+          clerkId: id,
+        },
+      });
+
+      if (!user) {
+        return res.status(404).json({
+          message: "User not found",
+        });
+      }
+
+      await prisma.user.delete({
+        where: {
+          clerkId: id,
+        },
+      });
+
+      res.status(200).json({
+        message: "User deleted",
+      });
+    }
   } catch (err) {
     console.log(err);
     res.status(500).json({
