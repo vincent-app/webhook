@@ -4,16 +4,19 @@
   "description": "",
   "scripts": {
     "postinstall": "prisma generate  --schema=./src/prisma/schema.prisma",
-    "build": "pnpm  postinstall && rimraf dist && tsc --noEmit",
     "vercel-build": "echo 'vercel-build'",
-    "start": "nodemon src/index.ts",
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "build": "pnpm  postinstall && rimraf dist && tsc --noEmit",
     "lint": "npx eslint . --ext .ts",
-    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:pull": "prisma db pull",
     "db:generate": "prisma generate",
     "db:studio": "prisma studio"
   },
   "author": "Vincent",
   "dependencies": {
+    "@clerk/clerk-sdk-node": "^4.12.5",
     "@prisma/client": "^5.0.0",
     "@types/express-serve-static-core": "^4.17.36",
     "@vercel/node": "^3.0.5",
@@ -23,6 +26,7 @@
     "express": "^4.18.2",
     "helmet": "^6.1.5",
     "morgan": "^1.10.0",
+    "svix": "^1.12.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
